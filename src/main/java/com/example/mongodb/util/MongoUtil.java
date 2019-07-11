@@ -1,6 +1,5 @@
 package com.example.mongodb.util;
 
-import com.mongodb.MongoClient;
 import org.springframework.data.mongodb.MongoDbFactory;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Component;

@@ -17,11 +17,12 @@ public interface MongoService {
 
     /**
      * 新增或更新
+     *
      * @param objectToSave
      * @param <T>
      * @return
      */
-    public <T> T save(T objectToSave);
+    <T> T save(T objectToSave);
 
     /**
      * 获取所有符合条件的集合
@@ -31,7 +32,7 @@ public interface MongoService {
      * @param <T>
      * @return
      */
-    public <T> List<T> find(Query query, Class<T> entityClass);
+    <T> List<T> find(Query query, Class<T> entityClass);
 
     /**
      * 获取所有集合
@@ -40,7 +41,7 @@ public interface MongoService {
      * @param <T>
      * @return
      */
-    public <T> List<T> findAll(Class<T> entityClass);
+    <T> List<T> findAll(Class<T> entityClass);
 
     /**
      * 根据ID获取集合
@@ -50,7 +51,7 @@ public interface MongoService {
      * @param <T>
      * @return
      */
-    public <T> T findById(Object id, Class<T> entityClass);
+    <T> T findById(Object id, Class<T> entityClass);
 
     /**
      * 获取第一个配置的集合
@@ -60,51 +61,57 @@ public interface MongoService {
      * @param <T>
      * @return
      */
-    public <T> T findOne(Query query, Class<T> entityClass);
+    <T> T findOne(Query query, Class<T> entityClass);
 
     /**
-     *  存在则更新，否则新增
+     * 存在则更新，否则新增
+     *
      * @param query
      * @param update
      * @param entityClass
      * @return
      */
-    public UpdateResult upsert(Query query, Update update, Class<?> entityClass);
+    UpdateResult upsert(Query query, Update update, Class<?> entityClass);
 
     /**
      * 删除
+     *
      * @param query
      * @param entityClass
      * @return
      */
-    public DeleteResult remove(Query query,Class<?> entityClass);
+    DeleteResult remove(Query query, Class<?> entityClass);
 
     /**
      * 删除表
+     *
      * @param entityClass
      * @param <T>
      */
-    public <T> void dropCollection(Class<T> entityClass);
+    <T> void dropCollection(Class<T> entityClass);
 
     /**
      * 删除表
+     *
      * @param collectionName
      */
-    public void dropCollection(String collectionName);
+    void dropCollection(String collectionName);
 
     /**
      * 判断集合是否有指定的值
+     *
      * @param query
      * @param entityClass
      * @return
      */
-    public boolean exists(Query query, Class<?> entityClass);
+    boolean exists(Query query, Class<?> entityClass);
 
     /**
      * 获取记录数
+     *
      * @param query
      * @param entityClass
      * @return
      */
-    public long count(Query query, Class<?> entityClass);
+    long count(Query query, Class<?> entityClass);
 }
